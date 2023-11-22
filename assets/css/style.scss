@@ -1,3 +1,11 @@
+@import "vars";
+
+@mixin flex_jc_ai($jc, $ai) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -12,4 +20,25 @@ body {
 
 main {
     flex: 1;
+}
+
+.center {
+    padding-left: calc(50% - $siteWidth / 2);
+    padding-right: calc(50% - $siteWidth / 2);
+}
+
+.header {
+    background-color: $bgDark;
+    height: 75px;
+    @include flex_jc_ai(space-between, center);
+
+    &__left {
+        @include flex_jc_ai(start, end);
+        gap: 41px;
+    }
+
+    &__right {
+        @include flex_jc_ai(end, end);
+        gap: 33px;
+    }
 }

@@ -12,4 +12,29 @@ body {
 
 main {
   flex: 1;
+}
+
+.center {
+  padding-left: calc(50% - 570px);
+  padding-right: calc(50% - 570px);
+}
+
+.header {
+  background-color: #222222;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__left {
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  gap: 41px;
+}
+.header__right {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  gap: 33px;
 }/*# sourceMappingURL=style.css.map */
