@@ -1,9 +1,16 @@
 @import "vars";
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 
 @mixin flex_jc_ai($jc, $ai) {
     display: flex;
     justify-content: $jc;
     align-items: $ai;
+}
+
+@mixin font_sz_w($size, $weight) {
+    font-family: "Lato", sans-serif;
+    font-size: $size;
+    font-weight: $weight;
 }
 
 * {
@@ -43,18 +50,89 @@ main {
     }
 }
 
-.chip-card {
+.chipcard {
     position: relative;
+    margin-right: -$chipOffset;
     &__chip {
         position: absolute;
         @include flex_jc_ai(center, center);
+        @include font_sz_w(12px, 400);
         color: white;
-        font-size: 12px;
-        top: -9px;
-        right: -9px;
+        top: $chipOffset;
+        right: $chipOffset;
         background-color: $colorPink;
         border-radius: 50%;
-        width: 1.25rem;
-        height: 1.25rem;
+        width: 19px;
+        height: 19px;
     }
+}
+
+.banner {
+    background-color: #f1e4e6;
+    @include flex_jc_ai(start, start);
+    margin-bottom: 65px;
+    &__left {
+        width: 50%;
+        @include flex_jc_ai(start, center);
+    }
+    &__right {
+        width: 50%;
+        padding-top: 290px;
+        padding-left: 63px;
+        @include flex_jc_ai(start, end);
+        gap: 16px;
+        .vline {
+            width: 12px;
+            height: 92px;
+            background-color: $colorPink;
+        }
+        .text {
+            :nth-child(1) {
+                @include font_sz_w(48px, 900);
+                display: block;
+            }
+            :nth-child(2) {
+                @include font_sz_w(32px, 700);
+            }
+            :nth-child(3) {
+                @extend :nth-child(2);
+                color: $colorPink;
+            }
+        }
+    }
+}
+
+.main-offer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    // .text {
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 100%;
+    //     top: 0;
+    //     left: 0;
+    //     @include flex_jc_ai(center, center);
+    //     flex-direction: column;
+    //     :nth-child(1) {
+    //         @include font_sz_w(16px, 400);
+    //         color: #fff;
+    //     }
+    //     :nth-child(2) {
+    //         @include font_sz_w(24px, 700);
+    //         color: $colorPink;
+    //     }
+    // }
+
+    .cell {
+        // position: relative;
+        grid-row: 1 / 2;
+    }
+
+    .bigcell {
+        // position: relative;
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+    }
+
 }
