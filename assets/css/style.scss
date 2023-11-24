@@ -103,9 +103,9 @@ main {
     }
 }
 
-.main-offer {
+.offer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(auto, max-content));
     grid-gap: 30px;
     padding-bottom: 96px;
     .text {
@@ -125,7 +125,9 @@ main {
             color: $colorPink;
         }
     }
-
+    img {
+        width: 100%;
+    }
     .cell {
         position: relative;
         grid-row: 1 / 2;
@@ -135,6 +137,58 @@ main {
         position: relative;
         grid-column: 1 / -1;
         grid-row: 2 / 3;
-        width: 100%;
+    }
+}
+
+.products {
+    @include flex_jc_ai(start, center);
+    flex-direction: column;
+    padding-bottom: 95px;
+    &-title {
+        padding-bottom: 48px;
+        :nth-child(1) {
+            @include font_sz_w(30px, 400);
+            text-align: center;
+            display: block;
+        }
+        :nth-child(2) {
+            @include font_sz_w(14px, 400);
+        }
+    }
+    &-list {
+        min-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(auto, min-content));
+        justify-content: space-between;
+        row-gap: 30px;
+        padding-bottom: 48px;
+        &-item {
+            background-color: #f8f8f8;
+            .spec {
+            padding: 25px 28px 20px 18px;
+                .name {
+                    display: block;
+                    @include font_sz_w(13px, 400);
+                    padding-bottom: 13px;
+                }
+                .desc {
+                    display: block;
+                    @include font_sz_w(14px, 300);
+                    padding-bottom: 18px;
+                }
+                .price {
+                    display: block;
+                    @include font_sz_w(16px, 400);
+                    color: $colorPink;
+                }
+            }
+        }
+    }
+    &-link {
+        text-decoration: none;
+        @include font_sz_w(16px, 400);
+        padding: 15px 39px;
+        border: 1px solid $colorPink;
+        color: $colorPink;
     }
 }

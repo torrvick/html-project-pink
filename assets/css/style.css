@@ -102,13 +102,13 @@ main {
   color: #F16D7F;
 }
 
-.main-offer {
+.offer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(auto, max-content));
   grid-gap: 30px;
   padding-bottom: 96px;
 }
-.main-offer .text {
+.offer .text {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -119,25 +119,94 @@ main {
   align-items: center;
   flex-direction: column;
 }
-.main-offer .text :nth-child(1) {
+.offer .text :nth-child(1) {
   font-family: "Lato", sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #fff;
 }
-.main-offer .text :nth-child(2), .main-offer .banner__right .text :nth-child(3), .banner__right .main-offer .text :nth-child(3) {
+.offer .text :nth-child(2), .offer .banner__right .text :nth-child(3), .banner__right .offer .text :nth-child(3) {
   font-family: "Lato", sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: #F16D7F;
 }
-.main-offer .cell {
+.offer img {
+  width: 100%;
+}
+.offer .cell {
   position: relative;
   grid-row: 1/2;
 }
-.main-offer .bigcell {
+.offer .bigcell {
   position: relative;
   grid-column: 1/-1;
   grid-row: 2/3;
-  width: 100%;
+}
+
+.products {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 95px;
+}
+.products-title {
+  padding-bottom: 48px;
+}
+.products-title :nth-child(1) {
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  text-align: center;
+  display: block;
+}
+.products-title :nth-child(2), .products-title .banner__right .text :nth-child(3), .banner__right .text .products-title :nth-child(3) {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+.products-list {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(auto, min-content));
+  justify-content: space-between;
+  row-gap: 30px;
+  padding-bottom: 48px;
+}
+.products-list-item {
+  background-color: #f8f8f8;
+}
+.products-list-item .spec {
+  padding: 25px 28px 20px 18px;
+}
+.products-list-item .spec .name {
+  display: block;
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  padding-bottom: 13px;
+}
+.products-list-item .spec .desc {
+  display: block;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  padding-bottom: 18px;
+}
+.products-list-item .spec .price {
+  display: block;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #F16D7F;
+}
+.products-link {
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 15px 39px;
+  border: 1px solid #F16D7F;
+  color: #F16D7F;
 }/*# sourceMappingURL=style.css.map */
