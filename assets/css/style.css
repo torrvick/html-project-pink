@@ -112,6 +112,8 @@ main {
   grid-template-columns: repeat(3, minmax(auto, max-content));
   grid-gap: clamp(16px, 16px + 14 * (100vw - 1024px) / 156, 30px);
   margin-bottom: 96px;
+  grid-gap: clamp(16px, 16px + 14 * (100vw - 1024px) / 156, 30px);
+  margin-bottom: 96px;
 }
 .offer .text {
   position: absolute;
@@ -138,6 +140,7 @@ main {
 }
 .offer img {
   width: 100%;
+  display: block;
   display: block;
 }
 .offer .cell {
@@ -177,6 +180,9 @@ main {
   grid-template-columns: repeat(3, minmax(auto, max-content));
   gap: clamp(16px, 16px + 14 * (100vw - 1024px) / 156, 30px);
   margin-bottom: 48px;
+  grid-template-columns: repeat(3, minmax(auto, max-content));
+  gap: clamp(16px, 16px + 14 * (100vw - 1024px) / 156, 30px);
+  margin-bottom: 48px;
 }
 .products-list-item {
   background-color: #f8f8f8;
@@ -184,7 +190,11 @@ main {
 .products-list-item img {
   width: 100%;
 }
+.products-list-item img {
+  width: 100%;
+}
 .products-list-item .spec {
+  padding: 25px 28px 20px 18px;
   padding: 25px 28px 20px 18px;
 }
 .products-list-item .spec .name {
