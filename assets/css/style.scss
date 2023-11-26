@@ -30,8 +30,6 @@ main {
 }
 
 .center {
-    // padding-left: calc(50% - $siteWidth / 2);
-    // padding-right: calc(50% - $siteWidth / 2);
     max-width: calc($contentWidth + $contentPadding * 2);
     margin: 0 auto;
     padding: 0 $contentPadding;
@@ -75,8 +73,7 @@ main {
     margin-bottom: 65px;
     .banner__content {
         width: 100%;
-        @include flex_jc_ai(start, center);
-
+        display: flex;
         &-left {
             width: 50%;
             img {
@@ -86,7 +83,8 @@ main {
         }
         &-right {
             width: 50%;
-            @include flex_jc_ai(start, center);
+            display: flex;
+            align-items: center;
             padding-bottom: 90px;
             .text {
                 border-left: 12px solid $colorPink;
@@ -110,10 +108,6 @@ main {
 .offer {
     display: grid;
     grid-template-columns: repeat(3, minmax(auto, max-content));
-    // grid-gap: 10px;
-    grid-gap: clamp(16px, calc(16px + (30 - 16) * (100vw - 1024px) / (1180 - 1024)), 30px);
-    margin-bottom: 96px;
-    // grid-gap: 10px;
     grid-gap: clamp(16px, calc(16px + (30 - 16) * (100vw - 1024px) / (1180 - 1024)), 30px);
     margin-bottom: 96px;
     .text {
@@ -136,13 +130,11 @@ main {
     img {
         width: 100%;
         display: block;
-        display: block;
     }
     .cell {
         position: relative;
         grid-row: 1 / 2;
     }
-
     .bigcell {
         position: relative;
         grid-column: 1 / -1;
@@ -151,7 +143,8 @@ main {
 }
 
 .products {
-    @include flex_jc_ai(start, center);
+    display: flex;
+    align-items: center;
     flex-direction: column;
     padding-bottom: 95px;
     &-title {
@@ -168,29 +161,14 @@ main {
     &-list {
         display: grid;
         grid-template-columns: repeat(3, minmax(auto, max-content));
-        // gap: 30px;
-        // width: 100%;
-        // justify-content: space-between;
-        gap: clamp(16px, calc(16px + (30 - 16) * (100vw - 1024px) / (1180 - 1024)), 30px);
-        margin-bottom: 48px;
-        grid-template-columns: repeat(3, minmax(auto, max-content));
-        // gap: 30px;
-        // width: 100%;
-        // justify-content: space-between;
         gap: clamp(16px, calc(16px + (30 - 16) * (100vw - 1024px) / (1180 - 1024)), 30px);
         margin-bottom: 48px;
         &-item {
             background-color: #f8f8f8;
-            // max-width: 360px;
-            img {
-                width: 100%;
-            }
-            // max-width: 360px;
             img {
                 width: 100%;
             }
             .spec {
-                padding: 25px 28px 20px 18px;
                 padding: 25px 28px 20px 18px;
                 .name {
                     display: block;
@@ -223,10 +201,11 @@ main {
     background-color: $colorDark;
     padding: 103px 0;
     &__content {
-        @include flex_jc_ai(space-between, start);
+        display: flex;
         gap: clamp(16px, calc(16px + (30 - 16) * (100vw - 1024px) / (1180 - 1024)), 30px);
         &-item {
-            @include flex_jc_ai(start, center);
+            display: flex;
+            align-items: center;
             flex-direction: column;
             :nth-child(1) {
                 display: block;

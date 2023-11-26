@@ -71,8 +71,6 @@ main {
 .banner .banner__content {
   width: 100%;
   display: flex;
-  justify-content: start;
-  align-items: center;
 }
 .banner .banner__content-left {
   width: 50%;
@@ -84,7 +82,6 @@ main {
 .banner .banner__content-right {
   width: 50%;
   display: flex;
-  justify-content: start;
   align-items: center;
   padding-bottom: 90px;
 }
@@ -110,8 +107,6 @@ main {
 .offer {
   display: grid;
   grid-template-columns: repeat(3, minmax(auto, max-content));
-  grid-gap: clamp(16px, 16px + 14 * (100vw - 1024px) / 156, 30px);
-  margin-bottom: 96px;
   grid-gap: clamp(16px, 16px + 14 * (100vw - 1024px) / 156, 30px);
   margin-bottom: 96px;
 }
@@ -141,7 +136,6 @@ main {
 .offer img {
   width: 100%;
   display: block;
-  display: block;
 }
 .offer .cell {
   position: relative;
@@ -155,7 +149,6 @@ main {
 
 .products {
   display: flex;
-  justify-content: start;
   align-items: center;
   flex-direction: column;
   padding-bottom: 95px;
@@ -180,9 +173,6 @@ main {
   grid-template-columns: repeat(3, minmax(auto, max-content));
   gap: clamp(16px, 16px + 14 * (100vw - 1024px) / 156, 30px);
   margin-bottom: 48px;
-  grid-template-columns: repeat(3, minmax(auto, max-content));
-  gap: clamp(16px, 16px + 14 * (100vw - 1024px) / 156, 30px);
-  margin-bottom: 48px;
 }
 .products-list-item {
   background-color: #f8f8f8;
@@ -190,11 +180,7 @@ main {
 .products-list-item img {
   width: 100%;
 }
-.products-list-item img {
-  width: 100%;
-}
 .products-list-item .spec {
-  padding: 25px 28px 20px 18px;
   padding: 25px 28px 20px 18px;
 }
 .products-list-item .spec .name {
@@ -234,13 +220,10 @@ main {
 }
 .feature__content {
   display: flex;
-  justify-content: space-between;
-  align-items: start;
   gap: clamp(16px, 16px + 14 * (100vw - 1024px) / 156, 30px);
 }
 .feature__content-item {
   display: flex;
-  justify-content: start;
   align-items: center;
   flex-direction: column;
 }
