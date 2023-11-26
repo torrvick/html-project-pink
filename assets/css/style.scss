@@ -30,74 +30,78 @@ main {
 }
 
 .center {
-    padding-left: calc(50% - $siteWidth / 2);
-    padding-right: calc(50% - $siteWidth / 2);
+    // padding-left: calc(50% - $siteWidth / 2);
+    // padding-right: calc(50% - $siteWidth / 2);
+    max-width: calc($contentWidth + $contentPadding * 2);
+    margin: 0 auto;
+    padding: 0 $contentPadding;
 }
 
 .header {
-    background-color: $bgDark;
-    height: 75px;
-    @include flex_jc_ai(space-between, center);
-
-    &__left {
-        @include flex_jc_ai(start, end);
-        gap: 41px;
+    background-color: $colorDark;
+    &__content {
+        height: 75px;
+        width: 100%;
+        @include flex_jc_ai(space-between, center);
+        &-left {
+            @include flex_jc_ai(start, end);
+            gap: 41px;
+        }
+        &-right {
+            @include flex_jc_ai(end, end);
+            gap: 33px;
+        }
     }
-
-    &__right {
-        @include flex_jc_ai(end, end);
-        gap: 33px;
-    }
-}
-
-.chipcard {
-    position: relative;
-    margin-right: -$chipOffset;
-    &__chip {
-        position: absolute;
-        @include flex_jc_ai(center, center);
-        @include font_sz_w(12px, 400);
-        color: white;
-        top: $chipOffset;
-        right: $chipOffset;
-        background-color: $colorPink;
-        border-radius: 50%;
-        width: 19px;
-        height: 19px;
+    .chipcard {
+        position: relative;
+        margin-right: -$chipOffset;
+        &__chip {
+            position: absolute;
+            @include flex_jc_ai(center, center);
+            @include font_sz_w(12px, 400);
+            color: white;
+            top: $chipOffset;
+            right: $chipOffset;
+            background-color: $colorPink;
+            border-radius: 50%;
+            width: 19px;
+            height: 19px;
+        }
     }
 }
 
 .banner {
     background-color: #f1e4e6;
-    @include flex_jc_ai(start, start);
     margin-bottom: 65px;
-    &__left {
-        flex: 1;
-        img {
-            display: block;
-        }
-    }
-    &__right {
-        padding-top: 290px;
-        flex: 1;
-        @include flex_jc_ai(start, end);
-        gap: 16px;
-        .vline {
-            width: 12px;
-            height: 92px;
-            background-color: $colorPink;
-        }
-        .text {
-            :nth-child(1) {
-                @include font_sz_w(48px, 900);
+    .banner__content {
+        width: 100%;
+        @include flex_jc_ai(start, center);
+
+        &-left {
+            width: 50%;
+            img {
                 display: block;
+                width: 100%;
             }
-            :nth-child(2) {
-                @include font_sz_w(32px, 700);
-            }
-            :nth-child(3) {
-                @extend :nth-child(2);
-                color: $colorPink;
+        }
+        &-right {
+            width: 50%;
+            @include flex_jc_ai(start, center);
+            padding-bottom: 90px;
+            .text {
+                border-left: 12px solid $colorPink;
+                padding-left: 16px;
+                :nth-child(1) {
+                    @include font_sz_w(48px, 900);
+                    display: block;
+                }
+                :nth-child(2) {
+                    @include font_sz_w(32px, 700);
+                }
+                :nth-child(3) {
+                    @extend :nth-child(2);
+                    color: $colorPink;
+                }
             }
         }
     }
@@ -106,8 +110,9 @@ main {
 .offer {
     display: grid;
     grid-template-columns: repeat(3, minmax(auto, max-content));
-    grid-gap: 30px;
-    padding-bottom: 96px;
+    // grid-gap: 10px;
+    grid-gap: clamp(16px, calc(16px + (30 - 16) * (100vw - 1024px) / (1180 - 1024)), 30px);
+    margin-bottom: 96px;
     .text {
         position: absolute;
         width: 100%;
@@ -127,6 +132,7 @@ main {
     }
     img {
         width: 100%;
+        display: block;
     }
     .cell {
         position: relative;
@@ -156,16 +162,21 @@ main {
         }
     }
     &-list {
-        min-width: 100%;
         display: grid;
-        grid-template-columns: repeat(3, minmax(auto, min-content));
-        justify-content: space-between;
-        row-gap: 30px;
-        padding-bottom: 48px;
+        grid-template-columns: repeat(3, minmax(auto, max-content));
+        // gap: 30px;
+        // width: 100%;
+        // justify-content: space-between;
+        gap: clamp(16px, calc(16px + (30 - 16) * (100vw - 1024px) / (1180 - 1024)), 30px);
+        margin-bottom: 48px;
         &-item {
             background-color: #f8f8f8;
+            // max-width: 360px;
+            img {
+                width: 100%;
+            }
             .spec {
-            padding: 25px 28px 20px 18px;
+                padding: 25px 28px 20px 18px;
                 .name {
                     display: block;
                     @include font_sz_w(13px, 400);
@@ -190,5 +201,118 @@ main {
         padding: 15px 39px;
         border: 1px solid $colorPink;
         color: $colorPink;
+    }
+}
+
+.feature {
+    background-color: $colorDark;
+    padding: 103px 0;
+    &__content {
+        @include flex_jc_ai(space-between, start);
+        gap: clamp(16px, calc(16px + (30 - 16) * (100vw - 1024px) / (1180 - 1024)), 30px);
+        &-item {
+            @include flex_jc_ai(start, center);
+            flex-direction: column;
+            :nth-child(1) {
+                display: block;
+                margin-bottom: 28px;
+            }
+            :nth-child(2) {
+                @include font_sz_w(20px, 400);
+                text-align: center;
+                color: $colorLight;
+                display: block;
+                margin-bottom: 16px;
+            }
+            :nth-child(3) {
+                @include font_sz_w(14px, 300);
+                text-align: center;
+                color: $colorLight;
+                display: block;
+                padding: 0 30px;
+            }
+        }
+    }
+}
+
+.subscribe {
+    padding-bottom: 156px;
+    padding-top: 97px;
+    background-image: url("/assets/img/subscribe_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    &__content {
+        @include flex_jc_ai(space-between, end);
+        &-left {
+
+            max-width: 360px;
+            .subcontainer {
+                @include flex_jc_ai(center, center);
+                flex-direction: column;
+                :nth-child(1) {
+                    margin-bottom: 30px;
+                }
+                :nth-child(2) {
+                    @include font_sz_w(20px, 400);
+                    color: $colorDark;
+                    text-align: center;
+                }
+            }
+        }
+        &-right {
+            width: 50%;
+            .subcontainer {
+                @include flex_jc_ai(center, center);
+                flex-direction: column;
+                :nth-child(1) {
+                    @include font_sz_w(25px, 700);
+                    color: $colorDark;
+                }
+                :nth-child(2) {
+                    @include font_sz_w(18px, 400);
+                    color: $colorDark;
+                    padding-bottom: 32px;
+                }
+                .subscribe-form {
+                    display: flex;
+                    .email-input {
+                        background-color: #e1e1e1;
+                        border: 0;
+                        height: 49px;
+                        border-radius: 25px 0 0 25px;
+                        padding: 15px 64px 15px 22px;
+                        @include font_sz_w(14px, 400);
+                        color: $colorDark;
+                    }
+                    .btn-subscribe {
+                        background-color: $colorPink;
+                        border: 0;
+                        height: 49px;
+                        border-radius: 0 25px 25px 0;
+                        padding: 15px 20px;
+                        @include font_sz_w(14px, 400);
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bottom {
+    background-color: $colorDark;
+    &__content {
+        height: 75px;
+        width: 100%;
+        @include flex_jc_ai(space-between, center);
+        &-left {
+            @include font_sz_w(16px, 400);
+            color: $colorLight;
+        }
+        &-right {
+            @include flex_jc_ai(end, end);
+            gap: 7px;
+        }
     }
 }
