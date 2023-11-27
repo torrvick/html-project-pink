@@ -71,21 +71,22 @@ main {
 .banner {
     background-color: #f1e4e6;
     margin-bottom: 65px;
-    .banner__content {
-        width: 100%;
+    &__content {
         display: flex;
         &-left {
+            display: flex;
+            justify-content: end;
             width: 50%;
             img {
                 display: block;
-                width: 100%;
+                max-width: 100%;
             }
         }
         &-right {
-            width: 50%;
             display: flex;
             align-items: center;
-            padding-bottom: 90px;
+            padding-right: $contentPadding;
+            padding-bottom: 5vw;
             .text {
                 border-left: 12px solid $colorPink;
                 padding-left: 16px;
@@ -202,8 +203,10 @@ main {
     padding: 103px 0;
     &__content {
         display: flex;
+        align-items: center;
         gap: clamp(16px, calc(16px + (30 - 16) * (100vw - 1024px) / (1180 - 1024)), 30px);
         &-item {
+            max-width: 360px;
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -238,6 +241,7 @@ main {
     background-position: bottom;
     &__content {
         @include flex_jc_ai(space-between, end);
+        gap: 25px;
         &-left {
             width: 360px;
             .subcontainer {
@@ -308,6 +312,156 @@ main {
         &-right {
             @include flex_jc_ai(end, end);
             gap: 7px;
+        }
+    }
+}
+
+// @media (max-width: 849px) and (min-width: 377px) {
+// }
+
+@media (max-width: 767px) {
+    .header {
+        &__content {
+            padding: 0 calc($contentPadding * 2);
+        }
+    }
+
+    .banner {
+        margin-bottom: 20px;
+        .text {
+            :nth-child(1) {
+                @include font_sz_w(44px, 900);
+            }
+            :nth-child(2) {
+                @include font_sz_w(24px, 700);
+            }
+        }
+    }
+
+    .offer {
+        margin-bottom: 154px;
+    }
+
+    .products {
+        padding-bottom: 64px;
+        &-list {
+            margin-bottom: 32px;
+            grid-template-columns: repeat(2, minmax(auto, max-content));
+        }
+    }
+
+    .feature {
+        padding: 48px 0 64px;
+        &__content {
+            flex-direction: column;
+            gap: 48px;
+        }
+    }
+
+    .subscribe {
+        padding-bottom: 140px;
+        padding-top: 64px;
+        &__content {
+            flex-direction: column;
+            align-items: center;
+            gap: 60px;
+            &-right {
+                width: 100%;
+                max-width: 360px;
+                .subcontainer {
+                    :nth-child(2) {
+                        padding-bottom: 27px;
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom {
+        &__content {
+            padding: 0 calc($contentPadding * 2);
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .header {
+        &__content {
+            padding: 0 $contentPadding;
+            &-right {
+                :not(:nth-child(1)) {
+                    display: none;
+                }
+                // .cartBtn {
+                //     display: none;
+                // }
+            }
+        }
+    }
+
+    .banner {
+        margin-bottom: 64px;
+        &__content {
+            @include flex_jc_ai(center, center);
+            &-left {
+                display: none;
+            }
+            &-right {
+                height: 363px;
+                .text {
+                    :nth-child(1) {
+                        @include font_sz_w(38px, 900);
+                    }
+                    :nth-child(2) {
+                        @include font_sz_w(20px, 700);
+                    }
+                }
+            }
+        }
+    }
+
+    .offer {
+        margin-bottom: 64px;
+        grid-template-columns: repeat(1, minmax(auto, max-content));
+        justify-content: center;
+        gap: 32px;
+        .cell,
+        .bigcell {
+            grid-row: auto;
+            grid-column: 1 / -1;
+        }
+        .bigcell > img {
+            height: 111px;
+            object-fit: cover;
+        }
+    }
+
+    .products {
+        padding-bottom: 96px;
+        &-list {
+            margin-bottom: 40px;
+            grid-template-columns: repeat(1, minmax(auto, max-content));
+        }
+    }
+
+    .feature {
+        padding: 46px 0 81px;
+        &__content {
+            flex-direction: column;
+            gap: 48px;
+        }
+    }
+
+    .subscribe {
+        padding-bottom: 109px;
+    }
+
+    .bottom {
+        padding-top: 43px;
+        padding-bottom: 9px;
+        &__content {
+            flex-direction: column-reverse;
+            padding: 0 calc($contentPadding * 2);
         }
     }
 }
