@@ -1,17 +1,8 @@
 @import "vars";
+@import "mixins";
+
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 
-@mixin flex_jc_ai($jc, $ai) {
-    display: flex;
-    justify-content: $jc;
-    align-items: $ai;
-}
-
-@mixin font_sz_w($size, $weight) {
-    font-family: "Lato", sans-serif;
-    font-size: $size;
-    font-weight: $weight;
-}
 
 * {
     box-sizing: border-box;
@@ -91,11 +82,11 @@ main {
                 border-left: 12px solid $colorPink;
                 padding-left: 16px;
                 :nth-child(1) {
-                    @include font_sz_w(48px, 900);
+                    @include font_sz_w(clamp(44px, 5vw, 48px), 900);
                     display: block;
                 }
                 :nth-child(2) {
-                    @include font_sz_w(32px, 700);
+                    @include font_sz_w(clamp(24px, 3vw, 32px), 700);
                 }
                 :nth-child(3) {
                     @extend :nth-child(2);
@@ -109,7 +100,10 @@ main {
 .offer {
     display: grid;
     grid-template-columns: repeat(3, minmax(auto, max-content));
-    grid-gap: clamp(16px, calc(16px + (30 - 16) * (100vw - 1024px) / (1180 - 1024)), 30px);
+    // grid-gap: clamp(16px, calc(16px + (30 - 16) * (100vw - 1024px) / (1180 - 1024)), 30px);
+    // column-gap: 2%;
+    column-gap: clamp(16px, 2%, 30px);
+    row-gap: clamp(16px, 5%, 30px);
     margin-bottom: 96px;
     .text {
         position: absolute;
@@ -162,7 +156,8 @@ main {
     &-list {
         display: grid;
         grid-template-columns: repeat(3, minmax(auto, max-content));
-        gap: clamp(16px, calc(16px + (30 - 16) * (100vw - 1024px) / (1180 - 1024)), 30px);
+        // gap: clamp(16px, calc(16px + (30 - 16) * (100vw - 1024px) / (1180 - 1024)), 30px);
+        gap: clamp(16px, 2.5vw, 30px);
         margin-bottom: 48px;
         &-item {
             background-color: #f8f8f8;
@@ -316,152 +311,4 @@ main {
     }
 }
 
-// @media (max-width: 849px) and (min-width: 377px) {
-// }
-
-@media (max-width: 767px) {
-    .header {
-        &__content {
-            padding: 0 calc($contentPadding * 2);
-        }
-    }
-
-    .banner {
-        margin-bottom: 20px;
-        .text {
-            :nth-child(1) {
-                @include font_sz_w(44px, 900);
-            }
-            :nth-child(2) {
-                @include font_sz_w(24px, 700);
-            }
-        }
-    }
-
-    .offer {
-        margin-bottom: 154px;
-    }
-
-    .products {
-        padding-bottom: 64px;
-        &-list {
-            margin-bottom: 32px;
-            grid-template-columns: repeat(2, minmax(auto, max-content));
-        }
-    }
-
-    .feature {
-        padding: 48px 0 64px;
-        &__content {
-            flex-direction: column;
-            gap: 48px;
-        }
-    }
-
-    .subscribe {
-        padding-bottom: 140px;
-        padding-top: 64px;
-        &__content {
-            flex-direction: column;
-            align-items: center;
-            gap: 60px;
-            &-right {
-                width: 100%;
-                max-width: 360px;
-                .subcontainer {
-                    :nth-child(2) {
-                        padding-bottom: 27px;
-                    }
-                }
-            }
-        }
-    }
-
-    .bottom {
-        &__content {
-            padding: 0 calc($contentPadding * 2);
-        }
-    }
-}
-
-@media (max-width: 575px) {
-    .header {
-        &__content {
-            padding: 0 $contentPadding;
-            &-right {
-                :not(:nth-child(1)) {
-                    display: none;
-                }
-                // .cartBtn {
-                //     display: none;
-                // }
-            }
-        }
-    }
-
-    .banner {
-        margin-bottom: 64px;
-        &__content {
-            @include flex_jc_ai(center, center);
-            &-left {
-                display: none;
-            }
-            &-right {
-                height: 363px;
-                .text {
-                    :nth-child(1) {
-                        @include font_sz_w(38px, 900);
-                    }
-                    :nth-child(2) {
-                        @include font_sz_w(20px, 700);
-                    }
-                }
-            }
-        }
-    }
-
-    .offer {
-        margin-bottom: 64px;
-        grid-template-columns: repeat(1, minmax(auto, max-content));
-        justify-content: center;
-        gap: 32px;
-        .cell,
-        .bigcell {
-            grid-row: auto;
-            grid-column: 1 / -1;
-        }
-        .bigcell > img {
-            height: 111px;
-            object-fit: cover;
-        }
-    }
-
-    .products {
-        padding-bottom: 96px;
-        &-list {
-            margin-bottom: 40px;
-            grid-template-columns: repeat(1, minmax(auto, max-content));
-        }
-    }
-
-    .feature {
-        padding: 46px 0 81px;
-        &__content {
-            flex-direction: column;
-            gap: 48px;
-        }
-    }
-
-    .subscribe {
-        padding-bottom: 109px;
-    }
-
-    .bottom {
-        padding-top: 43px;
-        padding-bottom: 9px;
-        &__content {
-            flex-direction: column-reverse;
-            padding: 0 calc($contentPadding * 2);
-        }
-    }
-}
+@import "media";

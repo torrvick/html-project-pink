@@ -92,13 +92,13 @@ main {
 }
 .banner__content-right .text :nth-child(1) {
   font-family: "Lato", sans-serif;
-  font-size: 48px;
+  font-size: clamp(44px, 5vw, 48px);
   font-weight: 900;
   display: block;
 }
 .banner__content-right .text :nth-child(2), .banner__content-right .text :nth-child(3) {
   font-family: "Lato", sans-serif;
-  font-size: 32px;
+  font-size: clamp(24px, 3vw, 32px);
   font-weight: 700;
 }
 .banner__content-right .text :nth-child(3) {
@@ -108,7 +108,8 @@ main {
 .offer {
   display: grid;
   grid-template-columns: repeat(3, minmax(auto, max-content));
-  grid-gap: clamp(16px, 16px + 14 * (100vw - 1024px) / 156, 30px);
+  column-gap: clamp(16px, 2%, 30px);
+  row-gap: clamp(16px, 5%, 30px);
   margin-bottom: 96px;
 }
 .offer .text {
@@ -172,7 +173,7 @@ main {
 .products-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(auto, max-content));
-  gap: clamp(16px, 16px + 14 * (100vw - 1024px) / 156, 30px);
+  gap: clamp(16px, 2.5vw, 30px);
   margin-bottom: 48px;
 }
 .products-list-item {
@@ -364,12 +365,12 @@ main {
   }
   .banner .text :nth-child(1) {
     font-family: "Lato", sans-serif;
-    font-size: 44px;
+    font-size: clamp(38px, 6vw, 44px);
     font-weight: 900;
   }
   .banner .text :nth-child(2), .banner .banner__content-right .text :nth-child(3), .banner__content-right .banner .text :nth-child(3) {
     font-family: "Lato", sans-serif;
-    font-size: 24px;
+    font-size: clamp(20px, 3.5vw, 24px);
     font-weight: 700;
   }
   .offer {
@@ -381,6 +382,7 @@ main {
   .products-list {
     margin-bottom: 32px;
     grid-template-columns: repeat(2, minmax(auto, max-content));
+    gap: 16px;
   }
   .feature {
     padding: 48px 0 64px;
@@ -429,6 +431,7 @@ main {
   }
   .banner__content-right {
     height: 363px;
+    padding: 0 16px;
   }
   .banner__content-right .text :nth-child(1) {
     font-family: "Lato", sans-serif;
