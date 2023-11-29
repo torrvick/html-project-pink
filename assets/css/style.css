@@ -1,47 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
-@media (max-width: 767px) {
-  .products :nth-child(n+3) {
-    display: none;
-  }
-}
-.product-heading {
+.product {
   background-color: #f8f3f4;
 }
-.product-heading__content {
+.product__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 148px;
 }
-.product-heading__content .title {
-  text-transform: uppercase;
+.product__content .title {
   font-family: "Lato", sans-serif;
   font-size: 24px;
   font-weight: 400;
   color: #F16D7F;
 }
-.product-heading__content .nav {
+.product__content .nav {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
 }
-.product-heading__content .nav .nav-item::after {
+.product__content .nav .nav-item::after {
   content: "/";
 }
-.product-heading__content .nav .nav-item:last-child::after {
+.product__content .nav .nav-item:last-child::after {
   display: none;
 }
-.product-heading__content .nav .nav-item:last-child .nav-link {
+.product__content .nav .nav-item:last-child .nav-link {
   font-family: "Lato", sans-serif;
   font-size: 14px;
   font-weight: 700;
   color: #F16D7F;
   padding-right: 0px;
 }
-.product-heading__content .nav .nav-item:first-child .nav-link {
+.product__content .nav .nav-item:first-child .nav-link {
   padding-left: 0;
 }
-.product-heading__content .nav .nav-item .nav-link {
+.product__content .nav .nav-item .nav-link {
   padding: 15px 5px;
   text-decoration: none;
   color: #636363;
@@ -49,20 +43,25 @@
   font-size: 14px;
   font-weight: 300;
 }
-.product-heading__content .nav .nav-item .nav-link:hover {
+.product__content .nav .nav-item .nav-link:hover {
   color: #F16D7F;
 }
 
 .product-view {
   background-color: #f7f7f7;
-  padding-top: 10px;
-  padding-bottom: 42px;
+  border-top: 1px solid #EAEAEA;
+  border-bottom: 1px solid #EAEAEA;
+  padding: 10px 141px 42px;
+  width: 100%;
   display: flex;
   justify-content: center;
   position: relative;
 }
 .product-view img {
+  box-sizing: content-box;
   display: block;
+  width: 100%;
+  max-width: 597px;
 }
 .product-view .change-view {
   position: absolute;
@@ -88,14 +87,13 @@
   border: 1px solid #EAEAEA;
   background-color: #fff;
   padding: 64px calc(50% - 320.5px);
-  margin-bottom: 129px;
+  margin-bottom: 65px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 .product-params__content .title {
-  text-transform: uppercase;
   font-family: "Lato", sans-serif;
   font-size: 14px;
   font-weight: 300;
@@ -113,16 +111,16 @@
   font-family: "Lato", sans-serif;
   font-size: 18px;
   font-weight: 300;
-  color: #4D4D4D;
+  color: #4d4d4d;
   margin-bottom: 48px;
 }
 .product-params__content .text {
   font-family: "Lato", sans-serif;
   font-size: 14px;
   font-weight: 300;
-  color: #5E5E5E;
+  color: #5e5e5e;
   text-align: center;
-  width: 550px;
+  max-width: 550px;
   margin-bottom: 32px;
 }
 .product-params__content .price {
@@ -136,7 +134,107 @@
   border-bottom: 1px solid #EAEAEA;
   margin-bottom: 65px;
 }
+.product-params__content .params-box {
+  margin-bottom: 48px;
+  display: flex;
+  gap: 28px;
+}
+.product-params__content .params-box .params-item {
+  position: relative;
+}
+.product-params__content .params-box .params-item .param-summary {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+}
+.product-params__content .params-box .params-item .param-summary .param-heading {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #6F6E6E;
+}
+.product-params__content .params-box .params-item .params-list {
+  padding: 7px 30px 2px 9px;
+  background: #fff;
+  box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+  position: absolute;
+  top: 22px;
+}
+.product-params__content .params-box .params-item .params-list-item {
+  display: flex;
+  gap: 9px;
+  padding-bottom: 9px;
+}
+.product-params__content .params-box .params-item .params-list-item label {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #6F6E6E;
+}
+.product-params__content .params-box .params-item[open] svg {
+  transform: rotate(180deg);
+}
+.product-params__content .add-button {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  padding: 15px 57px 14px 24px;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #F16D7F;
+  background-color: #fff;
+  border: 1px solid #F16D7F;
+  cursor: pointer;
+}
+.product-params__content .add-button:hover {
+  background-color: #F16D7F;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+.product-params__content .add-button:hover path {
+  fill: #fff;
+}
 
+@media (max-width: 767px) {
+  .product-view {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .product-view img {
+    max-width: 466px;
+  }
+  div.product-params {
+    padding: 0 0;
+    transform: translateY(63px);
+    margin-bottom: 129px;
+  }
+  div.product-params__content {
+    padding-left: 16px;
+    padding-right: 16px;
+    border-left: 0;
+    border-right: 0;
+  }
+  .products :nth-child(n+3) {
+    display: none;
+  }
+}
+@media (max-width: 575px) {
+  .product__content {
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+  }
+  .product-params__content .text {
+    line-height: 143.1%;
+  }
+  .product-params__content .params-box .params-item .param-summary .param-heading {
+    font-size: 10px;
+  }
+}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -408,7 +506,7 @@ main {
   gap: 25px;
 }
 .subscribe__content-left {
-  width: 360px;
+  max-width: 360px;
 }
 .subscribe__content-left .subcontainer {
   display: flex;
@@ -427,11 +525,14 @@ main {
 }
 .subscribe__content-right {
   width: 50%;
+  display: flex;
+  justify-content: center;
 }
 .subscribe__content-right .subcontainer {
   display: flex;
   align-items: center;
   flex-direction: column;
+  max-width: 360px;
 }
 .subscribe__content-right .subcontainer :nth-child(1) {
   font-family: "Lato", sans-serif;
@@ -453,8 +554,9 @@ main {
   background-color: #e1e1e1;
   border: 0;
   height: 49px;
+  width: 100%;
   border-radius: 25px 0 0 25px;
-  padding: 15px 64px 15px 22px;
+  padding: 15px 22px 15px 22px;
   font-family: "Lato", sans-serif;
   font-size: 14px;
   font-weight: 400;

@@ -1,14 +1,12 @@
-@import "media-product";
 @import "vars";
 @import "mixins";
 
-.product-heading {
+.product {
     background-color: #f8f3f4;
     &__content {
         @include flex_jc_ai(space-between, center);
         height: 148px;
         .title {
-            text-transform: uppercase;
             @include font_sz_w(24px, 400);
             color: $colorPink;
         }
@@ -48,13 +46,19 @@
 
 .product-view {
     background-color: #f7f7f7;
-    padding-top: 10px;
-    padding-bottom: 42px;
+    border-top: 1px solid $colorBorders;
+    border-bottom: 1px solid $colorBorders;
+    padding: 10px 141px 42px;
+    width: 100%;
     display: flex;
     justify-content: center;
     position: relative;
     img {
+        box-sizing: content-box;
         display: block;
+        width: 100%;
+        max-width: 597px;
+
     }
     .change-view {
         position: absolute;
@@ -64,32 +68,28 @@
         background-color: #d3d3d3;
         cursor: pointer;
         padding: 8px;
-        &:hover path{
+        &:hover path {
             fill: $colorPink;
         }
         &#view-prev {
-            left:0px;
+            left: 0px;
         }
         &#view-next {
-            right:0px;
+            right: 0px;
         }
-        
     }
-
 }
 
 .product-params {
-    
     &__content {
         transform: translateY(-64px);
         border: 1px solid $colorBorders;
         background-color: #fff;
         padding: 64px calc(50% - 641px / 2);
-        margin-bottom: 129px;
+        margin-bottom: 65px;
         @include flex_jc_ai(center, center);
         flex-direction: column;
         .title {
-            text-transform: uppercase;
             @include font_sz_w(14px, 300);
             color: $colorPink;
             margin-bottom: 12px;
@@ -103,14 +103,14 @@
         }
         .subtitle {
             @include font_sz_w(18px, 300);
-            color: #4D4D4D;
+            color: #4d4d4d;
             margin-bottom: 48px;
         }
         .text {
             @include font_sz_w(14px, 300);
-            color: #5E5E5E;
+            color: #5e5e5e;
             text-align: center;
-            width: 550px;
+            max-width: 550px;
             margin-bottom: 32px;
         }
         .price {
@@ -121,6 +121,64 @@
             padding-bottom: 65px;
             border-bottom: 1px solid $colorBorders;
             margin-bottom: 65px;
-        } 
+        }
+        .params-box {
+            margin-bottom: 48px;
+            display: flex;
+            gap: 28px;
+            .params-item {
+                position: relative;
+                .param-summary {
+                    display: flex;
+                    align-items: center;
+                    gap: 9px;
+                    cursor: pointer;
+                    .param-heading {
+                        @include font_sz_w(14px, 400);
+                        color: $colorSubText;
+                    }
+                }
+                .params-list {
+                    padding: 7px 30px 2px 9px;
+                    background: #fff;
+                    box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+                    position: absolute;
+                    top: 22px;
+                    &-item {
+                        display: flex;
+                        gap: 9px;
+                        padding-bottom: 9px;
+                        label {
+                            @include font_sz_w(14px, 400);
+                            color: $colorSubText;
+                        }
+                    }
+                }
+                &[open] svg {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        .add-button {
+            display: flex;
+            align-items: center;
+            gap: 23px;
+            padding: 15px 57px 14px 24px;
+            @include font_sz_w(16px, 400);
+            color: $colorPink;
+            background-color: #fff;
+            border: 1px solid $colorPink;
+            cursor: pointer;
+            &:hover {
+                background-color: $colorPink;
+                @include font_sz_w(16px, 600);
+                color: #fff;
+                path {
+                    fill: #fff;
+                }
+            }
+        }
     }
 }
+
+@import "media-product";
