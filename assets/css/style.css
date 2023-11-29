@@ -1,4 +1,142 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
+@media (max-width: 767px) {
+  .products :nth-child(n+3) {
+    display: none;
+  }
+}
+.product-heading {
+  background-color: #f8f3f4;
+}
+.product-heading__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 148px;
+}
+.product-heading__content .title {
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #F16D7F;
+}
+.product-heading__content .nav {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+.product-heading__content .nav .nav-item::after {
+  content: "/";
+}
+.product-heading__content .nav .nav-item:last-child::after {
+  display: none;
+}
+.product-heading__content .nav .nav-item:last-child .nav-link {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #F16D7F;
+  padding-right: 0px;
+}
+.product-heading__content .nav .nav-item:first-child .nav-link {
+  padding-left: 0;
+}
+.product-heading__content .nav .nav-item .nav-link {
+  padding: 15px 5px;
+  text-decoration: none;
+  color: #636363;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+.product-heading__content .nav .nav-item .nav-link:hover {
+  color: #F16D7F;
+}
+
+.product-view {
+  background-color: #f7f7f7;
+  padding-top: 10px;
+  padding-bottom: 42px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.product-view img {
+  display: block;
+}
+.product-view .change-view {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background-color: #d3d3d3;
+  cursor: pointer;
+  padding: 8px;
+}
+.product-view .change-view:hover path {
+  fill: #F16D7F;
+}
+.product-view .change-view#view-prev {
+  left: 0px;
+}
+.product-view .change-view#view-next {
+  right: 0px;
+}
+
+.product-params__content {
+  transform: translateY(-64px);
+  border: 1px solid #EAEAEA;
+  background-color: #fff;
+  padding: 64px calc(50% - 320.5px);
+  margin-bottom: 129px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.product-params__content .title {
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #F16D7F;
+  margin-bottom: 12px;
+}
+.product-params__content .divider {
+  background-color: #F16D7F;
+  border: none;
+  width: 63px;
+  height: 3px;
+  margin-bottom: 12px;
+}
+.product-params__content .subtitle {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: #4D4D4D;
+  margin-bottom: 48px;
+}
+.product-params__content .text {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #5E5E5E;
+  text-align: center;
+  width: 550px;
+  margin-bottom: 32px;
+}
+.product-params__content .price {
+  width: 100%;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: #F16D7F;
+  padding-bottom: 65px;
+  border-bottom: 1px solid #EAEAEA;
+  margin-bottom: 65px;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -197,6 +335,7 @@ main {
   font-family: "Lato", sans-serif;
   font-size: 14px;
   font-weight: 300;
+  color: #5D5D5D;
   padding-bottom: 18px;
 }
 .products-list-item .spec .price {
@@ -354,6 +493,12 @@ main {
   justify-content: end;
   align-items: end;
   gap: 7px;
+}
+.bottom__content-right .ext-link:hover .bg {
+  fill: #F16D7F;
+}
+.bottom__content-right .ext-link:hover .symbol {
+  fill: #FBFBFB;
 }
 
 @media (max-width: 767px) {

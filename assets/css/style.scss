@@ -1,5 +1,6 @@
 @import "vars";
 @import "mixins";
+@import "product";
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 
@@ -174,6 +175,7 @@ main {
                 .desc {
                     display: block;
                     @include font_sz_w(14px, 300);
+                    color: #5D5D5D;
                     padding-bottom: 18px;
                 }
                 .price {
@@ -307,6 +309,15 @@ main {
         &-right {
             @include flex_jc_ai(end, end);
             gap: 7px;
+            .ext-link:hover {
+                .bg {
+                    fill: $colorPink;
+                }
+                .symbol {
+                    fill: $colorLight;
+                }
+            }
+
         }
     }
 }

@@ -1,0 +1,7 @@
+@media (max-width: 767px) {
+    .products {
+        :nth-child(n+3) {
+            display: none;
+        }
+    }
+}
