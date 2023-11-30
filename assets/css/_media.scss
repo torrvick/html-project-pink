@@ -22,9 +22,8 @@
     }
 
     .products {
-        padding-bottom: 64px;
+        margin-bottom: 64px;
         &-list {
-            margin-bottom: 32px;
             grid-template-columns: repeat(2, minmax(auto, max-content));
             gap: 16px;
         }
@@ -115,9 +114,8 @@
     }
 
     .products {
-        padding-bottom: 96px;
+        margin-bottom: 96px;
         &-list {
-            margin-bottom: 40px;
             grid-template-columns: repeat(1, minmax(auto, max-content));
         }
     }

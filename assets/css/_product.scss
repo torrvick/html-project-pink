@@ -85,7 +85,7 @@
         transform: translateY(-64px);
         border: 1px solid $colorBorders;
         background-color: #fff;
-        padding: 64px calc(50% - 641px / 2);
+        padding: 64px calc(50% - 741px / 2);
         margin-bottom: 65px;
         @include flex_jc_ai(center, center);
         flex-direction: column;
@@ -114,7 +114,7 @@
             margin-bottom: 32px;
         }
         .price {
-            width: 100%;
+            width: 90%;
             text-align: center;
             @include font_sz_w(24px, 300);
             color: $colorPink;
@@ -169,16 +169,26 @@
             background-color: #fff;
             border: 1px solid $colorPink;
             cursor: pointer;
+            transition: all 0.3s;
+            path {
+                transition: all 0.3s;
+                fill: #EF5B70;
+            }
             &:hover {
+                transition: all 0.3s;
                 background-color: $colorPink;
-                @include font_sz_w(16px, 600);
                 color: #fff;
                 path {
+                    transition: all 0.3s;
                     fill: #fff;
                 }
             }
         }
     }
+}
+
+.prod {
+    margin-bottom: 128px;
 }
 
 @import "media-product";

@@ -10,7 +10,7 @@
     div.product-params {
         padding: 0 0;
         transform: translateY(63px);
-        margin-bottom: 129px;
+        margin-bottom: 128px;
         &__content {
             padding-left: $contentPadding;
             padding-right: $contentPadding;
@@ -19,7 +19,7 @@
         }
     }
 
-    .products {
+    .prod {
         :nth-child(n + 3) {
             display: none;
         }
@@ -35,10 +35,14 @@
         }
     }
 
-    .product-params {
+    div.product-params {
+        margin-bottom: 0;
         &__content {
             .text {
                 line-height: 143.1%;
+            }
+            .price {
+                width: 60%;
             }
             .params-box {
                 .params-item {
@@ -50,5 +54,9 @@
                 }
             }
         }
+    }
+
+    div.prod {
+        margin-bottom: 64px;
     }
 }
