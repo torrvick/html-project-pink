@@ -39,6 +39,7 @@ main {
         &-right {
             @include flex_jc_ai(end, end);
             gap: 33px;
+            
         }
         .head-button:hover {
             path {
@@ -181,7 +182,7 @@ main {
             .add-box {
                 position: absolute;
                 width: 100%;
-                // display: none;
+                display: none;
                 justify-content: center;
                 top: 30%;
                 pointer-events: none;
@@ -190,7 +191,6 @@ main {
                 display: flex;
                 align-items: center;
                 gap: 11px;
-                background-color: red;
                 border: 1px solid #fff;
                 padding: 11px 16px 11px 13px;
                 text-decoration: none;

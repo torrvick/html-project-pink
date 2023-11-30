@@ -450,6 +450,7 @@ main {
 .products-list-item .add-box {
   position: absolute;
   width: 100%;
+  display: none;
   justify-content: center;
   top: 30%;
   pointer-events: none;
@@ -458,7 +459,6 @@ main {
   display: flex;
   align-items: center;
   gap: 11px;
-  background-color: red;
   border: 1px solid #fff;
   padding: 11px 16px 11px 13px;
   text-decoration: none;
