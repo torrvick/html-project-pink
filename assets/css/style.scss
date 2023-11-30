@@ -26,11 +26,15 @@ main {
     padding: 0 $contentPadding;
 }
 
+
 .header {
     background-color: $colorDark;
+    
     &__content {
         height: 75px;
         width: 100%;
+        // overflow: hidden;
+        
         @include flex_jc_ai(space-between, center);
         &-left {
             @include flex_jc_ai(start, end);
@@ -39,6 +43,29 @@ main {
         &-right {
             @include flex_jc_ai(end, end);
             gap: 33px;
+            .header-menu {
+                position: relative;
+                cursor: pointer;
+                &-summary {
+                    list-style-type: none;
+                }
+                &-box {
+                    position: absolute;
+                    background-color: #fff;
+                    border: 1px solid #000;
+                    height: 300px;
+                    // width:200px;
+                    width: 100%;
+                    top:48px;
+                    // right: -475px;
+                    .menu-list {
+                        list-style-type: none;
+                    }
+                }
+                &[open] .header-menu-box {
+                    // right: 0;
+                }
+            }
             
         }
         .head-button:hover {
