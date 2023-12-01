@@ -68,7 +68,10 @@
         &__content {
             padding: 0 $contentPadding;
             &-right {
-                :not(:nth-child(1)) {
+                #profile-btn {
+                    display: none;
+                }
+                #cart-btn {
                     display: none;
                 }
             }

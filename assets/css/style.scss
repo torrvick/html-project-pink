@@ -8,6 +8,12 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    a {
+        text-decoration: none;
+        &:visited {
+            color: inherit;
+        }
+    }
 }
 
 body {
@@ -26,16 +32,77 @@ main {
     padding: 0 $contentPadding;
 }
 
-
 .header {
     background-color: $colorDark;
+    overflow-x: clip;
+    position: relative;
+
+    #menu-check {
+        display: none;
+        &:checked ~ .menu-box {
+            right: 0px;
+        }
+    }
+
+    .menu-box {
+        background-color: #fff;
+        padding: 37px 73px 37px 33px;
+        position: absolute;
+        top: 75px;
+        right: -300px;
+        z-index: 5000;
+        filter: drop-shadow(6px 4px 35px rgba(0, 0, 0, 0.21));
+        transition: right 0.3s;
+        ul {
+            list-style-type: none;
+        }
+        .title {
+            @include font_sz_w(14px, 700);
+            margin-bottom: 24px;
+        }
+        .close-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            cursor: pointer;
+        }
+        .group {
+            @include font_sz_w(14px, 400);
+            color: $colorPink;
+            margin-bottom: 20px;
+            :first-child {
+                margin-top: 7px;
+            }
+            .subgroup {
+                @include font_sz_w(14px, 400);
+                color: $colorSubText;
+                padding: 5px 5px 5px 20px;
+                cursor: pointer;
+                &:hover {
+                    color: $colorPink;
+                }
     
+                
+            }
+        }
+
+        
+    }
+
     &__content {
         height: 75px;
         width: 100%;
-        // overflow: hidden;
-        
+
         @include flex_jc_ai(space-between, center);
+        .head-button {
+            display: block;
+            cursor: pointer;
+        }
+        .head-button:hover {
+            path {
+                fill: $colorPink;
+            }
+        }
         &-left {
             @include flex_jc_ai(start, end);
             gap: 41px;
@@ -43,35 +110,30 @@ main {
         &-right {
             @include flex_jc_ai(end, end);
             gap: 33px;
-            .header-menu {
-                position: relative;
-                cursor: pointer;
-                &-summary {
-                    list-style-type: none;
-                }
-                &-box {
-                    position: absolute;
-                    background-color: #fff;
-                    border: 1px solid #000;
-                    height: 300px;
-                    // width:200px;
-                    width: 100%;
-                    top:48px;
-                    // right: -475px;
-                    .menu-list {
-                        list-style-type: none;
-                    }
-                }
-                &[open] .header-menu-box {
-                    // right: 0;
-                }
-            }
-            
-        }
-        .head-button:hover {
-            path {
-                fill: $colorPink;
-            }
+
+            // .header-menu {
+            //     // position: relative;
+            //     cursor: pointer;
+            //     &-summary {
+            //         list-style-type: none;
+            //     }
+            //     &-box {
+            //         // position: absolute;
+            //         background-color: #fff;
+            //         border: 1px solid #000;
+            //         height: 300px;
+            //         // width:200px;
+            //         width: 100%;
+            //         top:48px;
+            //         right: 0%;
+            //         .menu-list {
+            //             list-style-type: none;
+            //         }
+            //     }
+            //     &[open] .header-menu-box {
+            //         // right: -190px;
+            //     }
+            // }
         }
     }
     .chipcard {
@@ -222,7 +284,7 @@ main {
                 padding: 11px 16px 11px 13px;
                 text-decoration: none;
                 @include font_sz_w(14px, 400);
-                color:#fff;
+                color: #fff;
                 pointer-events: all;
                 &:hover {
                     box-shadow: 0px 0px 10px 0px #fff;
@@ -257,7 +319,6 @@ main {
                     display: flex;
                 }
             }
-
         }
     }
     &-link {

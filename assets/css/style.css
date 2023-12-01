@@ -257,6 +257,12 @@
   padding: 0;
   margin: 0;
 }
+* a {
+  text-decoration: none;
+}
+* a:visited {
+  color: inherit;
+}
 
 body {
   display: flex;
@@ -276,6 +282,60 @@ main {
 
 .header {
   background-color: #222222;
+  overflow-x: clip;
+  position: relative;
+}
+.header #menu-check {
+  display: none;
+}
+.header #menu-check:checked ~ .menu-box {
+  right: 0px;
+}
+.header .menu-box {
+  background-color: #fff;
+  padding: 37px 73px 37px 33px;
+  position: absolute;
+  top: 75px;
+  right: -300px;
+  z-index: 5000;
+  filter: drop-shadow(6px 4px 35px rgba(0, 0, 0, 0.21));
+  transition: right 0.3s;
+}
+.header .menu-box ul {
+  list-style-type: none;
+}
+.header .menu-box .title {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.header .menu-box .close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+.header .menu-box .group {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #F16D7F;
+  margin-bottom: 20px;
+}
+.header .menu-box .group :first-child {
+  margin-top: 7px;
+}
+.header .menu-box .group .subgroup {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #6F6E6E;
+  padding: 5px 5px 5px 20px;
+  cursor: pointer;
+}
+.header .menu-box .group .subgroup:hover {
+  color: #F16D7F;
 }
 .header__content {
   height: 75px;
@@ -283,6 +343,13 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header__content .head-button {
+  display: block;
+  cursor: pointer;
+}
+.header__content .head-button:hover path {
+  fill: #F16D7F;
 }
 .header__content-left {
   display: flex;
@@ -295,27 +362,6 @@ main {
   justify-content: end;
   align-items: end;
   gap: 33px;
-}
-.header__content-right .header-menu {
-  position: relative;
-  cursor: pointer;
-}
-.header__content-right .header-menu-summary {
-  list-style-type: none;
-}
-.header__content-right .header-menu-box {
-  position: absolute;
-  background-color: #fff;
-  border: 1px solid #000;
-  height: 300px;
-  width: 100%;
-  top: 48px;
-}
-.header__content-right .header-menu-box .menu-list {
-  list-style-type: none;
-}
-.header__content .head-button:hover path {
-  fill: #F16D7F;
 }
 .header .chipcard {
   position: relative;
@@ -755,7 +801,10 @@ main {
   .header__content {
     padding: 0 16px;
   }
-  .header__content-right :not(:nth-child(1)) {
+  .header__content-right #profile-btn {
+    display: none;
+  }
+  .header__content-right #cart-btn {
     display: none;
   }
   .banner {
