@@ -65,6 +65,11 @@ main {
             top: 16px;
             right: 16px;
             cursor: pointer;
+            &:hover {
+                path {
+                    fill: $colorPink;
+                }
+            }
         }
         .group {
             @include font_sz_w(14px, 400);

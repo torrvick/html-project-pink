@@ -316,6 +316,9 @@ main {
   right: 16px;
   cursor: pointer;
 }
+.header .menu-box .close-btn:hover path {
+  fill: #F16D7F;
+}
 .header .menu-box .group {
   font-family: "Lato", sans-serif;
   font-size: 14px;
