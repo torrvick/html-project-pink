@@ -15,11 +15,33 @@
                 }
             }
         }
+        &-list-item:last-of-type{
+            display: none;
+        }
     }
 }
 
 @media (max-width: 575px) {
     .products {
+        .filter-box {
+            .filter-list {
+                padding-left: 0;
+                &-heading {
+                    padding-left: 0;
+                    .filter-tag {
+                        display: none;
+                    }
+                    .filter-icon {
+                        svg {
+                            width: 37px;
+                            height: 25px;
+                        }
+                    }
+                }
+                
+            }
+        }
+        
         .filter-params {
             position: absolute;
             top: 225px;
