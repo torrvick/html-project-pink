@@ -1,6 +1,7 @@
 @import "vars";
 @import "mixins";
 @import "product";
+@import "catalog";
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 
@@ -86,12 +87,8 @@ main {
                 &:hover {
                     color: $colorPink;
                 }
-    
-                
             }
         }
-
-        
     }
 
     &__content {
@@ -115,30 +112,6 @@ main {
         &-right {
             @include flex_jc_ai(end, end);
             gap: 33px;
-
-            // .header-menu {
-            //     // position: relative;
-            //     cursor: pointer;
-            //     &-summary {
-            //         list-style-type: none;
-            //     }
-            //     &-box {
-            //         // position: absolute;
-            //         background-color: #fff;
-            //         border: 1px solid #000;
-            //         height: 300px;
-            //         // width:200px;
-            //         width: 100%;
-            //         top:48px;
-            //         right: 0%;
-            //         .menu-list {
-            //             list-style-type: none;
-            //         }
-            //     }
-            //     &[open] .header-menu-box {
-            //         // right: -190px;
-            //     }
-            // }
         }
     }
     .chipcard {
@@ -261,7 +234,8 @@ main {
     }
     &-list {
         display: grid;
-        grid-template-columns: repeat(3, minmax(auto, max-content));
+        // grid-template-columns: repeat(3, minmax(auto, max-content));
+        grid-template-columns: repeat(3, 1fr);
         // gap: clamp(16px, calc(16px + (30 - 16) * (100vw - 1024px) / (1180 - 1024)), 30px);
         gap: clamp(16px, 2.5vw, 30px);
         &-item {

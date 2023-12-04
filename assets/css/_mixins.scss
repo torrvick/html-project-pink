@@ -9,3 +9,10 @@
     font-size: $size;
     font-weight: $weight;
 }
+
+@mixin filter-colorize($color) {
+    color: $color;
+    path {
+        fill: $color;
+    }
+}

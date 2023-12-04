@@ -1,7 +1,7 @@
 @import "vars";
 @import "mixins";
 
-.product {
+.product-nav {
     background-color: #f8f3f4;
     &__content {
         @include flex_jc_ai(space-between, center);

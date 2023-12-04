@@ -1,0 +1,117 @@
+@import "vars";
+@import "mixins";
+
+.products {
+    .filter-box {
+        margin-top: 38px;
+        margin-bottom: 64px;
+        position: relative;
+        background-color: #fff;
+
+        .filter-list {
+            position: absolute;
+            z-index: 500;
+            padding-left: 16px;
+            padding-right: 16px;
+            width: 100%;
+            background-color: #fff;
+            &[open] {
+                box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+                @include filter-colorize($colorPink);
+            }
+            &-heading {
+                padding-top: 13px;
+                padding-left: 16px;
+                margin-bottom: 16px;
+                cursor: pointer;
+                list-style: none;
+                display: flex;
+                gap: 11px;
+                @include font_sz_w(14px, 600);
+                &:hover {
+                    @include filter-colorize($colorPink);
+                }
+            }
+            .filter-sublist {
+                &-heading {
+                    margin-left: 16px;
+                    margin-bottom: 18px;
+                    list-style: none;
+                    cursor: pointer;
+                    padding: 8px 8px 11px 12px;
+                    border-left: 5px solid $colorPink;
+                    border-bottom: 1px solid $colorBorders;
+                    @include font_sz_w(14px, 400);
+                    color: $colorSubText;
+                    &:hover {
+                        @include filter-colorize($colorPink);
+                    }
+                }
+                &-item {
+                    padding-left: 34px;
+                    padding-bottom: 5px;
+                    padding-top: 5px;
+                    padding: 5px 10px 5px 34px;
+                    list-style-type: none;
+                    @include font_sz_w(14px, 400);
+                    color: $colorSubText;
+                    &:hover {
+                        @include filter-colorize($colorPink);
+                    }
+                }
+                li:last-of-type {
+                    margin-bottom: 20px;
+                }
+                &[open] .filter-sublist-heading {
+                    @include filter-colorize($colorPink);
+                }
+            }
+        }
+    }
+
+    .filter-params {
+        grid-column: span 2;
+        background-color: #fff;
+        margin-top: 51px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 28px;
+        .filter-params-item {
+            position: relative;
+            .param-summary {
+                display: flex;
+                align-items: center;
+                gap: 9px;
+                cursor: pointer;
+                .param-heading {
+                    @include font_sz_w(14px, 400);
+                    color: $colorSubText;
+                }
+            }
+            .params-list {
+                padding: 7px 30px 2px 9px;
+                background: #fff;
+                box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+                position: absolute;
+                z-index: 500;
+                top: 22px;
+                right: 0;
+                &-item {
+                    display: flex;
+                    gap: 9px;
+                    padding-bottom: 9px;
+                    .param-item-label {
+                        @include font_sz_w(14px, 400);
+                        color: $colorSubText;
+                    }
+                }
+            }
+            &[open] svg {
+                transform: rotate(180deg);
+            }
+
+        }
+    }
+}
+
+@import "media-catalog";

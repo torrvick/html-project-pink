@@ -1,0 +1,30 @@
+@media (max-width: 767px) {
+    .products {
+        .filter-box {
+            margin-top: 14px;
+            margin-bottom: 40px;
+        }
+        .filter-params {
+            grid-column: span 1;
+            margin-top: 24px;
+            justify-content: end;
+            gap: clamp(10px, 2.5vw, 28px);
+            .filter-params-item {
+                .param-summary {
+                    gap: 3px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .products {
+        .filter-params {
+            position: absolute;
+            top: 225px;
+            right: 16px;
+            z-index: 500;
+        }
+    }
+}
