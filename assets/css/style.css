@@ -319,10 +319,10 @@
   font-weight: 400;
   color: #6F6E6E;
 }
-.products .filter-box .filter-list .filter-sublist-item:hover {
+.products .filter-box .filter-list .filter-sublist-item:hover a {
   color: #F16D7F;
 }
-.products .filter-box .filter-list .filter-sublist-item:hover path {
+.products .filter-box .filter-list .filter-sublist-item:hover a path {
   fill: #F16D7F;
 }
 .products .filter-box .filter-list .filter-sublist li:last-of-type {

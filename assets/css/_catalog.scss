@@ -55,7 +55,7 @@
                     list-style-type: none;
                     @include font_sz_w(14px, 400);
                     color: $colorSubText;
-                    &:hover {
+                    &:hover a {
                         @include filter-colorize($colorPink);
                     }
                 }
