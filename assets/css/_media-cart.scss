@@ -1,0 +1,12 @@
+@media (max-width: 767px) {
+    .cart {
+        flex-direction: column;
+        &__list {
+            max-width: 734px;
+            width: 100%;
+        }
+        &__order {
+            width: 100%;
+        }
+    }
+}

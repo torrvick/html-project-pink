@@ -2,6 +2,7 @@
 @import "mixins";
 @import "product";
 @import "catalog";
+@import "cart";
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 
@@ -371,7 +372,7 @@ main {
     background-position: bottom;
     &__content {
         @include flex_jc_ai(space-between, end);
-        gap: 25px;
+        gap: 10px;
         &-left {
             max-width: 360px;
             .subcontainer {
