@@ -68,6 +68,8 @@
         &__btn {
             padding: 1rem 1rem;
             @include font_sz_w(14px, 300);
+            text-transform: none;
+            width: 50%;
         }
     }
     .button {

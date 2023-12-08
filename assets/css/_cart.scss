@@ -92,6 +92,7 @@
     }
     &__btn {
         padding: 1rem 2rem;
+        text-transform: uppercase;
         @include font_sz_w(14px, 300);
     }
     &__order {
