@@ -16,7 +16,6 @@
         }
         &__order-box {
             width: 100%;
-            flex-basis: 0;
             margin-bottom: 128px;
         }
         &__order {
@@ -45,10 +44,10 @@
         &__product-box {
             margin-top: 39px;
             margin-bottom: 48px;
-            flex-basis: 0;
         }
         &__list {
             margin-bottom: 30px;
+            gap: 32px;
         }
         &__img {
             max-width: 143px;
@@ -60,7 +59,6 @@
         &__title {
             @include font_sz_w(16px, 400);
             margin-bottom: 26px;
-            max-width: 80%;
         }
         &__text {
             @include font_sz_w(14px, 400);

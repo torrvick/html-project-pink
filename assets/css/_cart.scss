@@ -6,10 +6,12 @@
         cursor: pointer;
         border: 1px solid #a4a4a4;
         background-color: #fff;
+        transition: all 0.3s;
         &:hover {
             border: 1px solid $colorPink;
             background-color: $colorPink;
             color: #fff;
+            transition: all 0.3s;
         }
     }
     &_pink {
@@ -17,10 +19,12 @@
         color: #fff;
         border: 1px solid #fff;
         background-color: $colorPink;
+        transition: all 0.3s;
         &:hover {
             color: $colorDark;
             background-color: #fff;
             border: 1px solid #a4a4a4;
+            transition: all 0.3s;
         }
     }
 }
@@ -32,7 +36,8 @@
     &__product-box {
         margin-top: 96px;
         margin-bottom: 128px;
-        flex-basis: 652px;
+        max-width: 652px;
+        width: 100%;
     }
     &__list {
         display: flex;
@@ -48,6 +53,7 @@
     }
     &__product-link {
         display: flex;
+        width: 100%;
     }
     &__img {
         display: block;
@@ -56,12 +62,13 @@
     }
     &__dsc {
         padding: 22px 0px 0px 31px;
+        width: 100%;
     }
     &__title {
         @include font_sz_w(24px, 400);
         color: $colorDark;
-        max-width: 202px;
         margin-bottom: 42px;
+
     }
     &__text {
         @include font_sz_w(22px, 400);
@@ -98,9 +105,10 @@
         @include font_sz_w(14px, 300);
     }
     &__order-box {
-        flex-basis: 360px;
+        width: 360px;
     }
     &__order {
+        width: 100%;
         margin-top: 113px;
         margin-bottom: 128px;
         
