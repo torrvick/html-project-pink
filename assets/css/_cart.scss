@@ -29,7 +29,7 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    &__box {
+    &__product-box {
         margin-top: 96px;
         margin-bottom: 128px;
         flex-basis: 652px;
@@ -46,11 +46,12 @@
         box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
         position: relative;
     }
+    &__product-link {
+        display: flex;
+    }
     &__img {
         display: block;
         max-width: 262px;
-        width: 50%;
-        height: auto;
         object-fit: cover;
     }
     &__dsc {
@@ -96,9 +97,15 @@
         text-transform: uppercase;
         @include font_sz_w(14px, 300);
     }
+    &__order-box {
+        flex-basis: 360px;
+    }
     &__order {
         margin-top: 113px;
-        flex-basis: 360px;
+        margin-bottom: 128px;
+        
+        position: sticky;
+        top: 10px;
         .order-data {
             margin-bottom: 57px;
 
