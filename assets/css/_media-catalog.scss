@@ -1,5 +1,5 @@
 @media (max-width: 767px) {
-    .products {
+    .prods {
         .filter-box {
             margin-top: 14px;
             margin-bottom: 40px;
@@ -15,14 +15,20 @@
                 }
             }
         }
-        &-list-item:last-of-type{
+        .products-list-item:last-of-type{
             display: none;
+        }
+    }
+    .prods .page-links {
+        ul {
+            margin-top: 41px;
+            margin-bottom: 63px;
         }
     }
 }
 
 @media (max-width: 575px) {
-    .products {
+    .prods {
         .filter-box {
             .filter-list {
                 padding-left: 0;
