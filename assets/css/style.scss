@@ -237,10 +237,11 @@ main {
         :nth-child(1) {
             @include font_sz_w(30px, 400);
             text-align: center;
-            display: block;
         }
         :nth-child(2) {
             @include font_sz_w(14px, 400);
+            text-align: center;
+
         }
     }
     &-list {
@@ -284,19 +285,16 @@ main {
             .spec {
                 padding: 25px 28px 20px 18px;
                 .name {
-                    display: block;
                     @include font_sz_w(13px, 400);
                     color: #5d5d5d;
                     padding-bottom: 13px;
                 }
                 .desc {
-                    display: block;
                     @include font_sz_w(14px, 300);
                     color: #5d5d5d;
                     padding-bottom: 18px;
                 }
                 .price {
-                    display: block;
                     @include font_sz_w(16px, 400);
                     color: $colorPink;
                 }
