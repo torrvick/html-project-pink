@@ -3,6 +3,7 @@
 @import "product";
 @import "catalog";
 @import "cart";
+@import "registration";
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 
@@ -85,9 +86,12 @@ main {
                 @include font_sz_w(14px, 400);
                 color: $colorSubText;
                 padding: 5px 5px 5px 20px;
-                cursor: pointer;
+                transition: padding 0.1s;
                 &:hover {
                     color: $colorPink;
+                    padding-left: 25px;
+                    padding-right: 0;
+                    transition: padding 0.1s;
                 }
             }
         }

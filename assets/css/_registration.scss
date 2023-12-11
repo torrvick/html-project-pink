@@ -1,0 +1,85 @@
+@import "vars";
+@import "mixins";
+
+.reg {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        gap: 23px;
+        padding-top: 64px;
+        padding-bottom: 96px;
+    }
+    &__form {
+        width: 360px;
+        flex-shrink: 0;
+        .reg-title {
+            @include font_sz_w(16px, 300);
+            color: $colorDark;
+            margin-bottom: 21px;
+        }
+        .reg-input {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #a4a4a4;
+            padding: 13px 17px 16px 17px;
+            @include font_sz_w(13px, 300);
+            &::placeholder {
+                color: #b1b1b1;
+            }
+            &:last-of-type {
+                margin-bottom: 15px;
+            }
+        }
+        .sex {
+            @include font_sz_w(11px, 300);
+            padding: 31px 0 33px 0;
+            display: flex;
+            align-items: center;
+            label {
+                padding-left: 10px;
+                margin-right: 20px;
+            }
+        }
+        .reg-hint {
+            @include font_sz_w(13px, 300);
+            color: #b1b1b1;
+            margin-bottom: 40px;
+        }
+        .join-btn {
+            @include font_sz_w(16px, 300);
+            padding: 1rem 2rem;
+            svg path{
+                fill: #fff;
+                transition: all 0.3s;
+            }
+            .btn-text {
+                margin-right: 20px;
+            }
+            &:hover svg path{
+                fill: $colorDark;
+                transition: all 0.3s;
+            }
+        }
+    }
+    &__info {
+        max-width: 652px;
+        @include font_sz_w(24px, 300);
+        p {
+            padding-bottom: 22px;
+        }
+        ul {
+            list-style-type: none;
+        }
+        li {
+            display: flex;
+            margin-bottom: 16px;
+        }
+        li:before {
+            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='16' viewBox='0 0 20 16' fill='none'%3E%3Cpath d='M19.8035 0H18.0904C17.8502 0 17.6222 0.111827 17.4752 0.303176L7.3702 13.2826L2.52481 7.05754C2.45151 6.96318 2.35808 6.88688 2.25153 6.83438C2.14499 6.78187 2.0281 6.75451 1.90963 6.75437H0.196467C0.032258 6.75437 -0.0584248 6.94572 0.0420614 7.07494L6.75503 15.6981C7.06874 16.1006 7.67166 16.1006 7.98782 15.6981L19.9579 0.318087C20.0584 0.191349 19.9677 0 19.8035 0Z' fill='black'/%3E%3C/svg%3E");
+            margin-right: 23px;
+        }
+    }
+}
+
+@import "media-registration";

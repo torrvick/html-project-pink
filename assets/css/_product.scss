@@ -54,7 +54,6 @@
         display: block;
         width: 100%;
         max-width: 597px;
-
     }
     .change-view {
         position: absolute;
@@ -133,6 +132,14 @@
                         @include font_sz_w(14px, 400);
                         color: $colorSubText;
                     }
+                    &:hover {
+                        .param-heading {
+                            @include filter-colorize($colorPink);
+                        }
+                        svg path {
+                            fill: $colorPink;
+                        }
+                    }
                 }
                 .params-list {
                     padding: 7px 30px 2px 9px;
@@ -150,8 +157,16 @@
                         }
                     }
                 }
-                &[open] svg {
-                    transform: rotate(180deg);
+                &[open] {
+                    .param-heading {
+                        @include filter-colorize($colorPink);
+                    }
+                    svg {
+                        transform: rotate(180deg);
+                        path {
+                            fill: $colorPink;
+                        }
+                    }
                 }
             }
         }
@@ -168,7 +183,7 @@
             transition: all 0.3s;
             path {
                 transition: all 0.3s;
-                fill: #EF5B70;
+                fill: #ef5b70;
             }
             &:hover {
                 transition: all 0.3s;

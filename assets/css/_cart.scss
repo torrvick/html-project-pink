@@ -50,6 +50,18 @@
         width: 100%;
         box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
         position: relative;
+        &:hover {
+            background-color: #f5f5f5;
+            box-shadow: 10px 13px 24px rgba(0, 0, 0, 0.13);
+            img {
+                filter: brightness(0.9);
+            }
+            .cart__item-quantity {
+                background-color: #f5f5f5;
+            }
+        }
+        
+        
     }
     &__product-link {
         display: flex;
@@ -162,7 +174,7 @@
                     font-weight: 600;
                 }
             }
-            .proceed__btn {
+            .proceed-btn {
                 width: 100%;
                 @include font_sz_w(16px, 300);
                 padding: 15px 0;

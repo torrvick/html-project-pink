@@ -23,6 +23,7 @@
                 padding-top: 13px;
                 padding-left: 16px;
                 margin-bottom: 16px;
+                margin-right: 300px;
                 cursor: pointer;
                 list-style: none;
                 display: flex;
@@ -90,6 +91,14 @@
                     @include font_sz_w(14px, 400);
                     color: $colorSubText;
                 }
+                &:hover {
+                    .param-heading {
+                        @include filter-colorize($colorPink);
+                    }
+                    svg path {
+                        fill: $colorPink;                            
+                    }
+                }
             }
             .params-list {
                 padding: 7px 30px 2px 9px;
@@ -109,9 +118,19 @@
                     }
                 }
             }
-            &[open] svg {
-                transform: rotate(180deg);
+            &[open] {
+                .param-heading {
+                    @include filter-colorize($colorPink);
+                }
+                svg {
+                    transform: rotate(180deg);
+                    path {
+                        fill: $colorPink;
+                    }
+                    
+                }
             }
+            
         }
     }
 
